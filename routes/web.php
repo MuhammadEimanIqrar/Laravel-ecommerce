@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// * Global Routes
+Route::get('/', [HomeController::class, 'index']);
+
+// * Auth Routes
+Route::get('/login', function () {
+    return view('Auth.Login');
 });
+Route::post('/login', [UserController::class, 'login']);
