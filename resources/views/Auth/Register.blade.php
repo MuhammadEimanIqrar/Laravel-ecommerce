@@ -182,12 +182,13 @@ input:focus {
 </head>
 <body>
     <div class="login">
-        <h1>Login</h1>
-        <form method="post" action="/login">
+        <h1>Register</h1>
+        <form method="post" action="/register">
 			@csrf
+            <input type="text" name="name" placeholder="User Name" required="required" />
             <input type="email" name="email" placeholder="Email" required="required" />
             <input type="password" name="password" placeholder="Password" required="required" />
-            <a href="/register" style="text-decoration: none; color: #B3E542;">not a member yet!</a>
+            <a href="/login" style="text-decoration: none; color: #B3E542;">already a member?</a>
             <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
         </form>
     </div>
